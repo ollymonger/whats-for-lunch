@@ -2,8 +2,14 @@
 This folder holds the server for the client to access.
 
 ### Route: /get-my-food
-- Route gathers type drinks, mains and snacks from the database using ```typescript prisma.lunchItems.findMany({ where: { type: "DRINK" }})```
-- Selects random number based off of: max of drinks, max of mains, max of snacks, to access a randomly selected drink/main/snack.
+- Route gathers type drinks, mains and snacks from the database using:
+- - ```let drinks = prisma.lunchItems.findMany({ where: { type: "DRINK" }})```
+- - ```let mains = prisma.lunchItems.findMany({ where: { type: "MAIN" }})```
+- - ```let snacks = prisma.lunchItems.findMany({ where: { type: "SNACK" }})```
+- Selects random number based off of: max of drinks, max of mains, max of snacks, to access a randomly selected drink/main/snack: 
+- - ```let randomDrink = Math.floor(Math.random() * drinks.length)```
+- - ```let randomMain = Math.floor(Math.random() * mains.length)```
+- - ```let randomSnack = Math.floor(Math.random() * snacks.length)```
 - Generates JSON object of drinks, mains and snacks specific to the Food model
 - Returns JSON object as response
 
