@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 })
 
 export const FoodSelection: React.FunctionComponent = () => {
-    let defaultFood = { snack: null, main: null, drink: null };
+    let defaultFood = { snack: null, main: null, drink: null, preptime: 0 };
     const [Food, SetFood] = React.useState<Food>(defaultFood);
     const [error, setError] = React.useState<boolean>(false);
     const classes = useStyles();
@@ -57,6 +57,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.snack?.info}
                                     </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.snack?.preptime} mins.
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
@@ -72,6 +75,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.main?.info}
+                                    </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.main?.preptime} mins.
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -90,10 +96,14 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.drink?.info}
                                     </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.drink?.preptime} mins.
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
                     </Grid>
+
                 </Grid>
             }
         </div >

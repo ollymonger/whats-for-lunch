@@ -35,26 +35,31 @@ app.post('/get-my-food', async (req: exp.Request, res: exp.Response) => {
         }
     });
 
+    let randomSnack = Math.floor(Math.random() * snacks.length);
+    let randomMain = Math.floor(Math.random() * mains.length);
+    let randomDrink = Math.floor(Math.random() * drinks.length);
+
     let selected = {
         snack: {
-            name: snacks[0].name,
-            picture: snacks[0].picture,
-            preptime: snacks[0].preptime,
-            info: snacks[0].info,
+            name: snacks[randomSnack].name,
+            picture: snacks[randomSnack].picture,
+            preptime: snacks[randomSnack].preptime,
+            info: snacks[randomSnack].info,
         },
         main: {
-            name: mains[0].name,
-            picture: mains[0].picture,
-            preptime: mains[0].preptime,
-            info: mains[0].info,
+            name: mains[randomMain].name,
+            picture: mains[randomMain].picture,
+            preptime: mains[randomMain].preptime,
+            info: mains[randomMain].info,
         },
         drink: {
-            name: drinks[0].name,
-            picture: drinks[0].picture,
-            preptime: drinks[0].preptime,
-            info: drinks[0].info,
+            name: drinks[randomDrink].name,
+            picture: drinks[randomDrink].picture,
+            preptime: drinks[randomDrink].preptime,
+            info: drinks[randomDrink].info,
         }
     }
+
 
     res.json(selected);
 });
