@@ -37,8 +37,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                     container
                     direction="row"
                     justify="center"
-                    alignItems="center" style={{ marginTop: '25vh' }}>
+                    alignItems="center" style={{ marginTop: '5vh' }}>
                     <Grid item xs={2}>
+                        <Typography variant="h4" style={{ fontFamily: 'Jomhuria, cursive', color: 'whitesmoke', textAlign: 'center', marginRight: '2.5vw' }}>SNACK</Typography>
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia className={classes.image} image={Food.snack?.picture} title={Food.snack?.name} />
@@ -54,6 +55,7 @@ export const FoodSelection: React.FunctionComponent = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={2}>
+                        <Typography variant="h4" style={{ fontFamily: 'Jomhuria, cursive', color: 'whitesmoke', textAlign: 'center', marginRight: '2.5vw' }}>MAIN</Typography>
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
@@ -70,15 +72,16 @@ export const FoodSelection: React.FunctionComponent = () => {
                     </Grid>
 
                     <Grid item xs={2}>
+                        <Typography variant="h4" style={{ fontFamily: 'Jomhuria, cursive', color: 'whitesmoke', textAlign: 'center', marginRight: '2.5vw' }}>DRINK</Typography>
                         <Card className={classes.root}>
                             <CardActionArea>
-                                <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
+                                <CardMedia className={classes.image} image={Food.drink?.picture} title={Food.main?.name} />
                                 <CardContent>
                                     <Typography variant="h5" component="h3">
-                                        {Food.main?.name}
+                                        {Food.drink?.name}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {Food.main?.info}
+                                        {Food.drink?.info}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

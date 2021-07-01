@@ -18,7 +18,7 @@ export const ErrorComponent: React.FunctionComponent<Food> = (props: Food) => {
             container
             direction="row"
             justify="center"
-            alignItems="center" style={{ marginTop: '25vh' }}>
+            alignItems="center" style={{ marginTop: '5vh' }}>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia className={classes.image} image="https://toppng.com/uploads/preview/red-sign-computer-stop-icon-glass-mark-symbol-error-icon-11553384323ic7y7sm9ve.png" title="Server Error" />
