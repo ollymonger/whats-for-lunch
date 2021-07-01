@@ -5,3 +5,9 @@ React TypeScript project which displays a random selection of food for lunch.
 Have you had a hard time thinking of what to eat for lunch? 
 In this project, you'll find many ideas of snacks, a main and what to drink this lunch time!
 Feel free to check this project out, and never feel hungry again!
+
+
+## Available scripts
+
+`npm run start:server` = start the node server.
+`npm start` = start the front end.
