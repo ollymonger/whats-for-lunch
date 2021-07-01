@@ -2,6 +2,7 @@ import { Card, CardActionArea, CardContent, CardMedia, makeStyles, Typography } 
 import React from "react";
 import { useEffect } from "react";
 import { Food } from "../interfaces/Food";
+import { ErrorComponent } from "./ErrorComponent";
 import { getRandomFood } from "./Functions/getRandomFood";
 
 const useStyles = makeStyles({
@@ -23,6 +24,12 @@ export const FoodSelection: React.FunctionComponent = () => {
         SetFood(returnedFood);
     }, [])
 
+    if (Food.snack == null || Food.main == null || Food.drink == null) {
+        return (
+            <ErrorComponent {...Food} />
+        )
+    }
+
     return (
         <div>
             <div className="snack">
@@ -41,10 +48,34 @@ export const FoodSelection: React.FunctionComponent = () => {
                 </Card>
             </div>
             <div className="main">
-                <Card></Card>
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
+                        <CardContent>
+                            <Typography variant="h5" component="h3">
+                                {Food.main?.name}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {Food.main?.info}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
             </div>
             <div className="drink">
-                <Card></Card>
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
+                        <CardContent>
+                            <Typography variant="h5" component="h3">
+                                {Food.main?.name}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {Food.main?.info}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
             </div>
         </div>
     )
