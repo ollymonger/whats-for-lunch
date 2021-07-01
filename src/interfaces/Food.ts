@@ -3,7 +3,7 @@ import { Main } from "./Main";
 import { Snack } from "./Snack";
 
 export interface Food {
-    snack: Snack
-    main: Main
-    drink: Drink
+    snack: Snack | null
+    main: Main | null
+    drink: Drink | null
 }

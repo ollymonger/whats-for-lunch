@@ -6,7 +6,7 @@ import { FoodSelection } from './components/FoodSelection';
 const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <FoodSelection {...myFood} />
+      <FoodSelection />
     </div>
   );
 }
