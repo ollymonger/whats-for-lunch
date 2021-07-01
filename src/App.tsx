@@ -1,13 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { FoodSelection } from './components/FoodSelection';
 
-function App() {
+const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <FoodSelection {...myFood} />
     </div>
   );
 }
