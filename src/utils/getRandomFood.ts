@@ -1,4 +1,4 @@
-import { Food } from "../../interfaces/Food";
+import { Food } from "../models/Food";
 
 
 export const getRandomFood = async () => {
