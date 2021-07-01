@@ -21,14 +21,21 @@ export const FoodSelection: React.FunctionComponent = () => {
     const classes = useStyles();
 
     useEffect(() => {
-        let returnedFood = getRandomFood();
-
-        if (returnedFood.snack === null || returnedFood.main === null || returnedFood.drink === null) {
-            setError(true);
-        }
-        SetFood(returnedFood);
+        let setRandomFood = async () => {
+            let returnedFood = await getRandomFood();
+            _setFood(returnedFood);
+        };
+        setRandomFood();
     }, [])
 
+    let _setFood = (food: Food) => {
+        if (food.snack === null || food.main === null || food.drink === null) {
+            setError(true);
+            return;
+        }
+        SetFood(food);
+        return;
+    }
 
     return (
         <div>

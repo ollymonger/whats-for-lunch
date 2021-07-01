@@ -12,8 +12,9 @@ generator client {
 
 model LunchItems {
   id       Int    @id @default(autoincrement())
-  type     Int
+  type     String
   name     String @unique
   picture  String
   preptime Int
+  info     String
 }
