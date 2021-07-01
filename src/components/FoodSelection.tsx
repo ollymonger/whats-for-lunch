@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
+import { Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { useEffect } from "react";
 import { Food } from "../interfaces/Food";
@@ -33,8 +33,12 @@ export const FoodSelection: React.FunctionComponent = () => {
     return (
         <div>
             {error ? <ErrorComponent {...Food} /> :
-                <div>
-                    <div className="snack">
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center" style={{ marginTop: '25vh' }}>
+                    <Grid item xs={2}>
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia className={classes.image} image={Food.snack?.picture} title={Food.snack?.name} />
@@ -48,8 +52,8 @@ export const FoodSelection: React.FunctionComponent = () => {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                    </div>
-                    <div className="main">
+                    </Grid>
+                    <Grid item xs={2}>
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
@@ -63,8 +67,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                    </div>
-                    <div className="drink">
+                    </Grid>
+
+                    <Grid item xs={2}>
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
@@ -78,9 +83,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                    </div>
-                </div>
+                    </Grid>
+                </Grid>
             }
-        </div>
+        </div >
     )
 }
