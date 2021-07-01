@@ -15,20 +15,27 @@ const useStyles = makeStyles({
 })
 
 export const FoodSelection: React.FunctionComponent = () => {
-    let defaultFood = { snack: null, main: null, drink: null };
+    let defaultFood = { snack: null, main: null, drink: null, preptime: 0 };
     const [Food, SetFood] = React.useState<Food>(defaultFood);
     const [error, setError] = React.useState<boolean>(false);
     const classes = useStyles();
 
     useEffect(() => {
-        let returnedFood = getRandomFood();
-
-        if (returnedFood.snack === null || returnedFood.main === null || returnedFood.drink === null) {
-            setError(true);
-        }
-        SetFood(returnedFood);
+        let setRandomFood = async () => {
+            let returnedFood = await getRandomFood();
+            _setFood(returnedFood);
+        };
+        setRandomFood();
     }, [])
 
+    let _setFood = (food: Food) => {
+        if (food.snack === null || food.main === null || food.drink === null) {
+            setError(true);
+            return;
+        }
+        SetFood(food);
+        return;
+    }
 
     return (
         <div>
@@ -50,6 +57,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.snack?.info}
                                     </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.snack?.preptime} mins.
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
@@ -65,6 +75,9 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.main?.info}
+                                    </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.main?.preptime} mins.
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -83,10 +96,14 @@ export const FoodSelection: React.FunctionComponent = () => {
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {Food.drink?.info}
                                     </Typography>
+                                    <Typography variant="body2" color="textPrimary" component="p">
+                                        Preptime: {Food.drink?.preptime} mins.
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
                     </Grid>
+
                 </Grid>
             }
         </div >
