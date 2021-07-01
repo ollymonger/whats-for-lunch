@@ -1,9 +1,9 @@
 import { Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { useEffect } from "react";
-import { Food } from "../interfaces/Food";
+import { Food } from "../models/Food";
 import { ErrorComponent } from "./ErrorComponent";
-import { getRandomFood } from "./Functions/getRandomFood";
+import { getRandomFood } from "../utils/getRandomFood";
 
 const useStyles = makeStyles({
     root: {

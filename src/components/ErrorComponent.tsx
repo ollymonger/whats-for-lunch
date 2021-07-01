@@ -1,5 +1,6 @@
 import { Card, CardActionArea, CardContent, CardMedia, Grid, makeStyles, Typography } from "@material-ui/core";
-import { Food } from "../interfaces/Food";
+import { Food } from "../models/Food";
+import { Logging } from "../utils/logging";
 
 const useStyles = makeStyles({
     root: {
@@ -12,7 +13,8 @@ const useStyles = makeStyles({
 
 export const ErrorComponent: React.FunctionComponent<Food> = (props: Food) => {
     const classes = useStyles();
-
+    let Logger: Logging = new Logging();
+    Logger.log("error", `Possible error with food selection: ${props}`);
     return (
         <Grid
             container
