@@ -3,7 +3,7 @@ import { Food } from "../../interfaces/Food";
 
 export const getRandomFood = () => {
     let selected: Food = {
-        snack: null,
+        snack: { name: "Crisps", info: "Testing testing testing", picture: "https://snipstock.com/assets/cdn/png/534b912622b0bc60dd8b339c32e4da74.png", preptime: 2 },
         main: null,
         drink: null
     }
