@@ -6,7 +6,7 @@ const useStyles = makeStyles({
         maxWidth: 345,
     },
     image: {
-        height: 140
+        height: 300
     }
 })
 

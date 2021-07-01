@@ -15,68 +15,72 @@ const useStyles = makeStyles({
 })
 
 export const FoodSelection: React.FunctionComponent = () => {
-    let defaultFood = { snack: null, main: null, drink: null }
+    let defaultFood = { snack: null, main: null, drink: null };
     const [Food, SetFood] = React.useState<Food>(defaultFood);
+    const [error, setError] = React.useState<boolean>(false);
     const classes = useStyles();
 
     useEffect(() => {
         let returnedFood = getRandomFood();
+
+        if (returnedFood.snack === null || returnedFood.main === null || returnedFood.drink === null) {
+            setError(true);
+        }
         SetFood(returnedFood);
     }, [])
 
-    if (Food.snack == null || Food.main == null || Food.drink == null) {
-        return (
-            <ErrorComponent {...Food} />
-        )
-    }
 
     return (
         <div>
-            <div className="snack">
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia className={classes.image} image={Food.snack?.picture} title={Food.snack?.name} />
-                        <CardContent>
-                            <Typography variant="h5" component="h3">
-                                {Food.snack?.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {Food.snack?.info}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </div>
-            <div className="main">
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
-                        <CardContent>
-                            <Typography variant="h5" component="h3">
-                                {Food.main?.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {Food.main?.info}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </div>
-            <div className="drink">
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
-                        <CardContent>
-                            <Typography variant="h5" component="h3">
-                                {Food.main?.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {Food.main?.info}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </div>
+            {error ? <ErrorComponent {...Food} /> :
+                <div>
+                    <div className="snack">
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia className={classes.image} image={Food.snack?.picture} title={Food.snack?.name} />
+                                <CardContent>
+                                    <Typography variant="h5" component="h3">
+                                        {Food.snack?.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {Food.snack?.info}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>
+                    <div className="main">
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
+                                <CardContent>
+                                    <Typography variant="h5" component="h3">
+                                        {Food.main?.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {Food.main?.info}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>
+                    <div className="drink">
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia className={classes.image} image={Food.main?.picture} title={Food.main?.name} />
+                                <CardContent>
+                                    <Typography variant="h5" component="h3">
+                                        {Food.main?.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {Food.main?.info}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>
+                </div>
+            }
         </div>
     )
 }
