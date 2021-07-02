@@ -9,3 +9,6 @@ test('foodSelection component loads', () => {
 
     expect(testInstance?.nodeType == 'component').toBe(true);
 })
+
+test('errorComponent calls Logger.log', () => {
+})
