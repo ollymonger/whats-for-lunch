@@ -1,4 +1,4 @@
-import { Logging } from './utils/logging';
+import { Logging } from '../utils/logging';
 
 /*Logger testing*/
 test('logger prints: [INFO 1] | Logging initialised.', () => {

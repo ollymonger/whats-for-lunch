@@ -1,5 +1,5 @@
 import { type } from 'os';
-import { Food } from './Food'
+import { Food } from '../models/Food'
 
 test('expect Food object to be of type Food', () => {
     let input = {
