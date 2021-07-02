@@ -1,6 +1,6 @@
 import TestRenderer from 'react-test-renderer';
-import { ErrorComponent } from './ErrorComponent';
-import { FoodSelection } from './FoodSelection';
+import { ErrorComponent } from '../components/ErrorComponent';
+import { FoodSelection } from '../components/FoodSelection';
 
 
 test('foodSelection component loads', () => {

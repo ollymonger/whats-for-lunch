@@ -1,6 +1,6 @@
-import { getRandomFood } from "./utils/getRandomFood";
-import { Food } from './models/Food'
-import { Snack } from './models/Snack'
+import { getRandomFood } from "../utils/getRandomFood";
+import { Food } from '../models/Food'
+import { Snack } from '../models/Snack'
 
 test('getRandomFood returns food object with null snack, drink and mains', async () => {
     let returnedFood = await getRandomFood();
