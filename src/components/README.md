@@ -14,8 +14,7 @@ A react function component that uses:
 - useState function: 
 - - SetFood which sets a Food type object with specified object.
 - useState function: 
-- - setError used during _setFood 
-- - also used to query frontend based on returned food data.
+- - setError used during _setFood to set the error boolean.
 - Material UI for formatting
 
 Returns:
