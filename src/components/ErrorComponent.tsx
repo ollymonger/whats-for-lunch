@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 export const ErrorComponent: React.FunctionComponent<Food> = (props: Food) => {
     const classes = useStyles();
     let Logger: Logging = new Logging();
-    Logger.log("error", `Possible error with food selection: ${props}`);
+    Logger.log("error", `Possible error with food selection: ${JSON.stringify(props)}`);
     return (
         <Grid
             container
