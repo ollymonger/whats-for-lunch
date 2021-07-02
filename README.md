@@ -2,8 +2,8 @@
 React TypeScript project which displays a random selection of food for lunch.
 
 ## Images
-![alt text](https://imgur.com/DjOwDzj)
 ![alt text](https://i.imgur.com/FtRJFfU.png)
+![alt text](https://i.imgur.com/cOvmk9w.png)
 
 ### Aims of this project
 Have you had a hard time thinking of what to eat for lunch? 
