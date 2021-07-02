@@ -27,8 +27,6 @@ test('_setFood sets error to true, to enable the error component!', async () => 
     expect(error).toBe(true);
 })
 
-
-
 test('expect null Snack Object to be inputted to Food object as null', () => {
 
     let snack: Snack = {
