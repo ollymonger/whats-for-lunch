@@ -7,7 +7,7 @@ React TypeScript project which displays a random selection of food for lunch.
 
 ### Aims of this project
 Have you had a hard time thinking of what to eat for lunch? 
-In this project, you will understand how to use useEffect & useState hooks to gather LunchItems from a database using an Express server and prisma for Typescript!
+In this project, you will understand how I have used useEffect & useState hooks to gather LunchItems from a database using an Express server and prisma for Typescript!
 Feel free to check this project out, and never feel hungry again!
 
 ### Available scripts
