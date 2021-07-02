@@ -14,3 +14,4 @@ Feel free to check this project out, and never feel hungry again!
 
 - `npm run start:server` = start the node server.
 - `npm start` = start the front end.
+- `npm ci` = delete node_modules and download most recent packages
